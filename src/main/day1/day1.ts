@@ -25,6 +25,7 @@ export class PartOneAdditionRule implements AdditionRule {
 
 export class PartTwoAdditionRule implements AdditionRule {
   shouldAdd(index: number, input: string) {
-    return false;
+    const length = input.length;
+    return input[index] === input[(index + length / 2) % length];
   }
 }
