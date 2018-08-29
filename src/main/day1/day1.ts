@@ -14,17 +14,17 @@ export class CircularSequenceDetector {
 }
 
 export interface AdditionRule {
-  shouldAdd(index: number, input: string);
+  shouldAdd(index: number, input: string): boolean;
 }
 
 export class PartOneAdditionRule implements AdditionRule {
-  shouldAdd(index: number, input: string) {
+  shouldAdd(index: number, input: string): boolean {
     return input[index] === input[(index + 1) % input.length];
   }
 }
 
 export class PartTwoAdditionRule implements AdditionRule {
-  shouldAdd(index: number, input: string) {
+  shouldAdd(index: number, input: string): boolean {
     const length = input.length;
     return input[index] === input[(index + length / 2) % length];
   }
